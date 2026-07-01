@@ -1,6 +1,14 @@
 import React from "react";
 import "./RealEstateBlog.css";
 
+// Import Blog Images
+import real1 from "../../assets/images/blogimages/real1.jpeg";
+import real2 from "../../assets/images/blogimages/real2.jpg";
+import real3 from "../../assets/images/blogimages/real3.jpeg";
+import real4 from "../../assets/images/blogimages/real4.jpeg";
+import real5 from "../../assets/images/blogimages/real5.jpeg";
+import real6 from "../../assets/images/blogimages/real6.jpeg";
+
 const CATEGORIES = [
   "Buying",
   "Selling",
@@ -13,6 +21,7 @@ const CATEGORIES = [
 const POSTS = [
   {
     lot: "01",
+    image: real1,
     category: "Buying",
     featured: true,
     title: "Reading a Neighborhood Before You Read the Listing",
@@ -24,6 +33,7 @@ const POSTS = [
   },
   {
     lot: "02",
+    image: real2,
     category: "Market Trends",
     title: "What Comparable Sales Actually Tell You",
     excerpt:
@@ -34,6 +44,7 @@ const POSTS = [
   },
   {
     lot: "03",
+    image: real3,
     category: "Selling",
     title: "Staging Rooms People Actually Live In",
     excerpt:
@@ -44,6 +55,7 @@ const POSTS = [
   },
   {
     lot: "04",
+    image: real4,
     category: "Renovation",
     title: "The Renovations That Pay You Back",
     excerpt:
@@ -54,6 +66,7 @@ const POSTS = [
   },
   {
     lot: "05",
+    image: real5,
     category: "Investing",
     title: "Small Multifamily: The Quiet On-Ramp to Investing",
     excerpt:
@@ -64,6 +77,7 @@ const POSTS = [
   },
   {
     lot: "06",
+    image: real6,
     category: "Neighborhoods",
     title: "Ashwood Park: A Walking Guide",
     excerpt:
@@ -79,27 +93,32 @@ function CategoryTag({ category }) {
   return <span className={`tag tag--${slug}`}>{category}</span>;
 }
 
-function PlotMark({ category }) {
-  const slug = category.toLowerCase().replace(/\s+/g, "-");
-  return (
-    <div className={`plot plot--${slug}`} aria-hidden="true">
-      <span className="plot__corner plot__corner--tl" />
-      <span className="plot__corner plot__corner--br" />
-    </div>
-  );
-}
-
 function BlogCard({ post }) {
   return (
     <article className={`card ${post.featured ? "card--featured" : ""}`}>
       <div className="card__plot">
-        <PlotMark category={post.category} />
-        <span className="card__lot">LOT&nbsp;{post.lot}</span>
+        <img
+          src={post.image}
+          alt={post.title}
+          className="card__image"
+        />
+
+        <span className="card__lot">
+          LOT&nbsp;{post.lot}
+        </span>
       </div>
+
       <div className="card__body">
         <CategoryTag category={post.category} />
-        <h3 className="card__title">{post.title}</h3>
-        <p className="card__excerpt">{post.excerpt}</p>
+
+        <h3 className="card__title">
+          {post.title}
+        </h3>
+
+        <p className="card__excerpt">
+          {post.excerpt}
+        </p>
+
         <div className="card__meta">
           <span>{post.author}</span>
           <span className="card__dot">·</span>
@@ -107,6 +126,7 @@ function BlogCard({ post }) {
           <span className="card__dot">·</span>
           <span>{post.readTime}</span>
         </div>
+
         <a className="card__link" href="#read">
           Read full story <span aria-hidden="true">→</span>
         </a>
@@ -123,22 +143,38 @@ export default function RealEstateBlog() {
     <div className="re-page">
       <header className="hero">
         <div className="hero__grid" aria-hidden="true" />
+
         <div className="hero__inner">
-          <p className="hero__eyebrow">FIELD NOTES ON REAL ESTATE</p>
-          <h1 className="hero__title">Notes from the Neighborhood</h1>
-          <p className="hero__subtitle">
-            Straight-talking dispatches on buying, selling, and living well
-            where you land — written by people who've actually done the
-            walkthroughs.
+          <p className="hero__eyebrow">
+            FIELD NOTES ON REAL ESTATE
           </p>
+
+          <h1 className="hero__title">
+            Notes from the Neighborhood
+          </h1>
+
+          <p className="hero__subtitle">
+            Straight-talking dispatches on buying, selling, and living
+            well where you land — written by people who've actually done
+            the walkthroughs.
+          </p>
+
           <a className="hero__cta" href="#listings">
             Start reading
           </a>
         </div>
 
-        <div className="ticker" role="list" aria-label="Categories">
+        <div
+          className="ticker"
+          role="list"
+          aria-label="Categories"
+        >
           {CATEGORIES.concat(CATEGORIES).map((cat, i) => (
-            <span className="ticker__item" role="listitem" key={`${cat}-${i}`}>
+            <span
+              className="ticker__item"
+              role="listitem"
+              key={`${cat}-${i}`}
+            >
               {cat}
             </span>
           ))}
@@ -159,7 +195,10 @@ export default function RealEstateBlog() {
 
         <div className="listings__grid">
           {rest.map((post) => (
-            <BlogCard post={post} key={post.lot} />
+            <BlogCard
+              key={post.lot}
+              post={post}
+            />
           ))}
         </div>
       </main>
@@ -167,22 +206,36 @@ export default function RealEstateBlog() {
       <footer className="footer">
         <div className="footer__inner">
           <div>
-            <p className="footer__title">Get new listings in your inbox</p>
+            <p className="footer__title">
+              Get new listings in your inbox
+            </p>
+
             <p className="footer__subtitle">
-              One email, twice a month. No spam, no pop-ups, no fine print.
+              One email, twice a month. No spam, no pop-ups,
+              no fine print.
             </p>
           </div>
-          <form className="footer__form" onSubmit={(e) => e.preventDefault()}>
+
+          <form
+            className="footer__form"
+            onSubmit={(e) => e.preventDefault()}
+          >
             <input
               type="email"
               placeholder="you@example.com"
               aria-label="Email address"
               required
             />
-            <button type="submit">Subscribe</button>
+
+            <button type="submit">
+              Subscribe
+            </button>
           </form>
         </div>
-        <p className="footer__legal">© 2026 Field Notes. All rights reserved.</p>
+
+        <p className="footer__legal">
+          © 2026 Field Notes. All rights reserved.
+        </p>
       </footer>
     </div>
   );
