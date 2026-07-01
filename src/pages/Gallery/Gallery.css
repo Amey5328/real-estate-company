@@ -1,0 +1,22 @@
+.gallery-page {
+  width: 100%;
+}
+
+.gallery-hero {
+  width: 100%;
+  padding: 100px 20px;
+  text-align: center;
+  background-color: #f8f8f8;
+}
+
+.gallery-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 12px;
+}
+
+.gallery-breadcrumb {
+  font-size: 1rem;
+  color: #666;
+}
