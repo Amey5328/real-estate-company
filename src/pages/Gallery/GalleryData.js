@@ -4,12 +4,13 @@ import gallery3 from "../../assets/images/GalleryImages/gallery3.jpg";
 import gallery4 from "../../assets/images/GalleryImages/gallery4.jpg";
 import gallery5 from "../../assets/images/GalleryImages/gallery5.jpg";
 import gallery6 from "../../assets/images/GalleryImages/gallery6.jpg";
+import gallery7 from "../../assets/images/GalleryImages/gallery7.jpg";
 
 const galleryData = [
   {
     id: 1,
     image: gallery1,
-    alt: "Luxury Villa"
+    alt: "Modern House"
   },
   {
     id: 2,
@@ -34,6 +35,11 @@ const galleryData = [
   {
     id: 6,
     image: gallery6,
+    alt: "Luxury Home"
+  },
+  {
+    id: 7,
+    image: gallery7,
     alt: "Luxury Home"
   }
 ];
