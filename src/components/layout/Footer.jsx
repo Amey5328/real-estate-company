@@ -66,7 +66,7 @@ const Footer = () => {
           <motion.div variants={item} className="space-y-5">
             <div>
               <h3 className="text-2xl font-bold tracking-wide">
-                Estate<span className="text-cyan-400">Pro</span>
+                Estate<span className="text-cyan-400">AURELIA</span>
               </h3>
               <p className="mt-3 max-w-sm text-sm leading-6 text-slate-300">
                 Premium real estate solutions for buying, selling, and renting properties with confidence.
@@ -84,7 +84,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-3">
                 <FaEnvelope className="text-cyan-400" />
-                <span>support@estatepro.com</span>
+                <span>support@aurelia.com</span>
               </div>
             </div>
           </motion.div>
@@ -157,7 +157,7 @@ const Footer = () => {
           className="mt-14 border-t border-white/10 pt-6"
         >
           <div className="flex flex-col gap-4 text-sm text-slate-400 md:flex-row md:items-center md:justify-between">
-            <p>© 2026 EstatePro. All rights reserved.</p>
+            <p>© 2026 AURELIA. All rights reserved.</p>
             <div className="flex flex-wrap gap-4">
               <a href="#" className="transition-colors duration-300 hover:text-white">
                 Privacy Policy
