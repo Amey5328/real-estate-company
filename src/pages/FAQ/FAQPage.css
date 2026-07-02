@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap");
+
+/* ---------------------------------------------
+   Tokens (kept consistent with RealEstateBlog.css)
+--------------------------------------------- */
+.faq-page {
+  --ink: #14213d;
+  --blueprint: #3a5a78;
+  --sand: #ede6d6;
+  --clay: #b5652d;
+  --paper: #faf8f4;
+  --charcoal: #2b2b28;
+  --line: rgba(20, 33, 61, 0.14);
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+
+  background: var(--paper);
+  color: var(--charcoal);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+
+.faq-page * {
+  box-sizing: border-box;
+}
+
+.faq-page a {
+  color: inherit;
+}
+
+/* ---------------------------------------------
+   Header
+--------------------------------------------- */
+.faq-header {
+  position: relative;
+  background: var(--sand);
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+
+.faq-header__grid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at 50% 0%, black 55%, transparent 90%);
+  opacity: 0.6;
+}
+
+.faq-header__inner {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 88px 24px 64px;
+  text-align: center;
+}
+
+.faq-header__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--blueprint);
+  margin: 0 0 18px;
+}
+
+.faq-header__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  line-height: 1.1;
+  color: var(--ink);
+  margin: 0 0 18px;
+  letter-spacing: -0.01em;
+}
+
+.faq-header__subtitle {
+  font-size: 1rem;
+  color: #4a4640;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* ---------------------------------------------
+   Body / list
+--------------------------------------------- */
+.faq-body {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 64px 24px 88px;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--line);
+}
+
+/* ---------------------------------------------
+   Accordion item
+--------------------------------------------- */
+.faq-item {
+  border-bottom: 1px solid var(--line);
+}
+
+.faq-item__trigger {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 18px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  padding: 22px 4px;
+  font-family: var(--font-body);
+}
+
+.faq-item__trigger:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.faq-item__clause {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--blueprint);
+  white-space: nowrap;
+}
+
+.faq-item__question {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.08rem;
+  color: var(--ink);
+}
+
+.faq-item__icon {
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  color: var(--clay);
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.faq-item--open .faq-item__icon {
+  background: var(--clay);
+  color: var(--paper);
+  border-color: var(--clay);
+}
+
+.faq-item__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.28s ease;
+}
+
+.faq-item--open .faq-item__panel {
+  grid-template-rows: 1fr;
+}
+
+.faq-item__panel > .faq-item__answer {
+  overflow: hidden;
+}
+
+.faq-item__answer {
+  font-size: 0.95rem;
+  color: #55524c;
+  margin: 0;
+  padding: 0 4px 22px 4px;
+  max-width: 58ch;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-item__panel {
+    transition: none;
+  }
+}
+
+/* ---------------------------------------------
+   Contact callout
+--------------------------------------------- */
+.faq-contact {
+  margin-top: 56px;
+  padding: 32px;
+  background: var(--ink);
+  border-radius: 4px;
+  text-align: center;
+  color: var(--paper);
+}
+
+.faq-contact__title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+
+.faq-contact__subtitle {
+  font-size: 0.92rem;
+  color: rgba(250, 248, 244, 0.7);
+  margin: 0 0 22px;
+}
+
+.faq-contact__cta {
+  display: inline-block;
+  background: var(--clay);
+  color: var(--paper);
+  font-weight: 600;
+  font-size: 0.92rem;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 3px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.faq-contact__cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(181, 101, 45, 0.3);
+}
+
+.faq-contact__cta:focus-visible {
+  outline: 2px solid var(--paper);
+  outline-offset: 3px;
+}
+
+/* ---------------------------------------------
+   Responsive
+--------------------------------------------- */
+@media (max-width: 560px) {
+  .faq-header__inner {
+    padding: 72px 20px 48px;
+  }
+
+  .faq-item__trigger {
+    grid-template-columns: 1fr auto;
+    row-gap: 6px;
+  }
+
+  .faq-item__clause {
+    grid-column: 1 / -1;
+  }
+}

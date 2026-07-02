@@ -1,0 +1,495 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap");
+
+/* ---------------------------------------------
+   Tokens
+--------------------------------------------- */
+.re-page {
+  --ink: #14213d;
+  --blueprint: #3a5a78;
+  --sand: #ede6d6;
+  --clay: #b5652d;
+  --paper: #faf8f4;
+  --charcoal: #2b2b28;
+  --sage: #6b7a5e;
+  --terracotta: #c97b4a;
+  --rose: #a97c7c;
+  --line: rgba(20, 33, 61, 0.14);
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+
+  background: var(--paper);
+  color: var(--charcoal);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+
+.re-page * {
+  box-sizing: border-box;
+}
+
+.re-page a {
+  color: inherit;
+}
+
+/* ---------------------------------------------
+   Hero
+--------------------------------------------- */
+.hero {
+  position: relative;
+  background: var(--sand);
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+
+.hero__grid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at 50% 0%, black 55%, transparent 90%);
+  opacity: 0.6;
+}
+
+.hero__inner {
+  position: relative;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 108px 24px 72px;
+  text-align: center;
+}
+
+.hero__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--blueprint);
+  margin: 0 0 20px;
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.4rem, 5.5vw, 4rem);
+  line-height: 1.05;
+  color: var(--ink);
+  margin: 0 0 20px;
+  letter-spacing: -0.01em;
+}
+
+.hero__subtitle {
+  font-size: 1.05rem;
+  color: #4a4640;
+  max-width: 540px;
+  margin: 0 auto 34px;
+}
+
+.hero__cta {
+  display: inline-block;
+  background: var(--clay);
+  color: var(--paper);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  padding: 13px 28px;
+  border-radius: 3px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.hero__cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(181, 101, 45, 0.3);
+}
+
+.hero__cta:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+/* Category ticker */
+.ticker {
+  position: relative;
+  display: flex;
+  gap: 40px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: 1px solid var(--line);
+  background: var(--paper);
+  padding: 14px 0;
+}
+
+.ticker__item {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--blueprint);
+  padding-left: 40px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.ticker__item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--clay);
+}
+
+.ticker__item:first-child {
+  padding-left: 0;
+}
+
+.ticker__item:first-child::before {
+  display: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ticker {
+    animation: none;
+  }
+}
+
+/* ---------------------------------------------
+   Listings section
+--------------------------------------------- */
+.listings {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 72px 24px 40px;
+}
+
+.listings__header {
+  margin-bottom: 40px;
+}
+
+.listings__header h2 {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 6px;
+}
+
+.listings__header p {
+  color: #6b675f;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.listings__featured {
+  margin-bottom: 32px;
+}
+
+.listings__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* ---------------------------------------------
+   Card ("listing plaque")
+--------------------------------------------- */
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 10px 28px rgba(20, 33, 61, 0.08);
+  transform: translateY(-2px);
+}
+
+.card--featured {
+  flex-direction: row;
+}
+
+.card__plot {
+  position: relative;
+  flex: 0 0 auto;
+  height: 220px;
+  overflow: hidden;
+}
+
+.card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .card__image {
+  transform: scale(1.05);
+}
+
+.card--featured .card__plot {
+  flex: 0 0 42%;
+  height: auto;
+}
+
+.card__lot {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--paper);
+  background: rgba(20, 33, 61, 0.55);
+  padding: 4px 8px;
+  border-radius: 2px;
+}
+
+.plot {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--sand), var(--paper) 70%);
+}
+
+.plot--buying { background: linear-gradient(135deg, #3a5a78, #8ea3b8); }
+.plot--selling { background: linear-gradient(135deg, #b5652d, #d99c6c); }
+.plot--market-trends { background: linear-gradient(135deg, #6b7a5e, #a3b295); }
+.plot--renovation { background: linear-gradient(135deg, #c97b4a, #e3ae86); }
+.plot--investing { background: linear-gradient(135deg, #14213d, #3a5a78); }
+.plot--neighborhoods { background: linear-gradient(135deg, #a97c7c, #cfa9a9); }
+
+.plot__corner {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid rgba(250, 248, 244, 0.8);
+}
+
+.plot__corner--tl {
+  top: 12px;
+  left: 12px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.plot__corner--br {
+  bottom: 12px;
+  right: 12px;
+  border-left: none;
+  border-top: none;
+}
+
+.card__body {
+  padding: 22px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.tag {
+  display: inline-block;
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 2px;
+  margin-bottom: 12px;
+  color: var(--paper);
+}
+
+.tag--buying { background: var(--blueprint); }
+.tag--selling { background: var(--clay); }
+.tag--market-trends { background: var(--sage); }
+.tag--renovation { background: var(--terracotta); }
+.tag--investing { background: var(--ink); }
+.tag--neighborhoods { background: var(--rose); }
+
+.card__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.15rem;
+  line-height: 1.3;
+  color: var(--ink);
+  margin: 0 0 10px;
+}
+
+.card--featured .card__title {
+  font-size: 1.55rem;
+}
+
+.card__excerpt {
+  font-size: 0.92rem;
+  color: #55524c;
+  margin: 0 0 18px;
+  flex: 1;
+}
+
+.card__meta {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: #837f76;
+  margin-bottom: 14px;
+}
+
+.card__dot {
+  margin: 0 6px;
+}
+
+.card__link {
+  font-weight: 600;
+  font-size: 0.88rem;
+  text-decoration: none;
+  color: var(--ink);
+  border-bottom: 1px solid var(--clay);
+  padding-bottom: 2px;
+  align-self: flex-start;
+  transition: color 0.15s ease;
+}
+
+.card__link:hover {
+  color: var(--clay);
+}
+
+.card__link:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+/* ---------------------------------------------
+   Footer
+--------------------------------------------- */
+.footer {
+  background: var(--ink);
+  color: var(--paper);
+  margin-top: 56px;
+  padding: 48px 24px 24px;
+}
+
+.footer__inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(250, 248, 244, 0.15);
+}
+
+.footer__title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  margin: 0 0 4px;
+}
+
+.footer__subtitle {
+  font-size: 0.9rem;
+  color: rgba(250, 248, 244, 0.7);
+  margin: 0;
+}
+
+.footer__form {
+  display: flex;
+  gap: 10px;
+}
+
+.footer__form input {
+  font-family: var(--font-body);
+  padding: 11px 14px;
+  border-radius: 3px;
+  border: 1px solid rgba(250, 248, 244, 0.25);
+  background: rgba(250, 248, 244, 0.08);
+  color: var(--paper);
+  min-width: 220px;
+}
+
+.footer__form input::placeholder {
+  color: rgba(250, 248, 244, 0.5);
+}
+
+.footer__form input:focus-visible {
+  outline: 2px solid var(--paper);
+  outline-offset: 2px;
+}
+
+.footer__form button {
+  font-family: var(--font-body);
+  font-weight: 600;
+  background: var(--clay);
+  color: var(--paper);
+  border: none;
+  border-radius: 3px;
+  padding: 11px 20px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.footer__form button:hover {
+  background: #c97a3f;
+}
+
+.footer__form button:focus-visible {
+  outline: 2px solid var(--paper);
+  outline-offset: 2px;
+}
+
+.footer__legal {
+  max-width: 1120px;
+  margin: 18px auto 0;
+  font-size: 12px;
+  color: rgba(250, 248, 244, 0.5);
+}
+
+/* ---------------------------------------------
+   Responsive
+--------------------------------------------- */
+@media (max-width: 900px) {
+  .listings__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card--featured {
+    flex-direction: column;
+  }
+
+  .card--featured .card__plot {
+    flex: 0 0 auto;
+    height: 200px;
+  }
+}
+
+@media (max-width: 620px) {
+  .hero__inner {
+    padding: 80px 20px 56px;
+  }
+
+  .listings__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer__form {
+    width: 100%;
+  }
+
+  .footer__form input {
+    flex: 1;
+    min-width: 0;
+  }
+}

@@ -7,10 +7,12 @@ import About from "../pages/About/About";
 import Properties from "../pages/Properties/Properties";
 import Services from "../pages/Services/Services";
 import Gallery from "../pages/Gallery/Gallery";
-import Blog from "../pages/Blog/Blog";
-import FAQ from "../pages/FAQ/FAQ";
+
+
 import Contact from "../pages/Contact/Contact";
 import NotFound from "../pages/NotFound/NotFound";
+import RealEstateBlog from "../pages/Blog/RealEstateBlog";
+import FAQPage from "../pages/FAQ/FAQPage";
 
 const AppRoutes = () => {
   return (
@@ -27,9 +29,9 @@ const AppRoutes = () => {
 
         <Route path="gallery" element={<Gallery />} />
 
-        <Route path="blog" element={<Blog />} />
+        <Route path="blog" element={<RealEstateBlog />} />
 
-        <Route path="faq" element={<FAQ />} />
+        <Route path="faq" element={<FAQPage />} />
 
         <Route path="contact" element={<Contact />} />
 
