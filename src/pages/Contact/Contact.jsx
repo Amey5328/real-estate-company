@@ -76,7 +76,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen overflow-hidden bg-[#fbf8f3] text-[#151515]">
+    <div className="min-h-screen bg-[#fbf8f3] text-[#151515] overflow-x-hidden">
       <main>
         {/* Hero Banner */}
 
@@ -84,15 +84,15 @@ export default function ContactPage() {
   <div className="mx-auto flex h-full max-w-7xl items-center px-8 sm:px-12 lg:px-16">
     <div className="max-w-4xl">
 
-      <p className="mb-6 text-sm font-semibold uppercase tracking-[0.35em] text-[#D4A32A]">
+      <p className="mb-4 text-xs sm:text-sm font-semibold uppercase tracking-[0.3em] sm:tracking-[0.35em] text-[#D4A32A]">
         GET IN TOUCH
       </p>
 
-      <h1 className="text-[58px] font-serif font-bold leading-[1.05] text-white sm:text-[70px] lg:text-[82px]">
+      <h1 className="text-4xl sm:text-6xl lg:text-[82px] font-serif font-bold leading-tight text-white">
         Let's start a conversation.
       </h1>
 
-      <p className="mt-8 max-w-3xl text-[22px] leading-10 text-gray-300">
+      <p className="mt-5 max-w-2xl text-base sm:text-lg lg:text-[22px] leading-7 sm:leading-9 text-gray-300">
         Whether you're buying, selling, or simply exploring —
         we'd love to hear from you.
       </p>
@@ -102,18 +102,18 @@ export default function ContactPage() {
     </div>
   </div>
 </section>
-        <section className="mx-auto max-w-7xl grid gap-8 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:gap-10 lg:px-8">
+        <section className="mx-auto grid max-w-7xl gap-10 px-5 py-12 sm:px-8 lg:grid-cols-2 lg:gap-14 lg:px-8">
           
           <div className="flex flex-col justify-center">
             <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#9b7b53]">
               Reach us
             </p>
 
-            <h1 className="mt-3 max-w-xl text-4xl font-semibold leading-tight sm:text-5xl">
+            <h1 className="mt-3 max-w-xl text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight">
               Speak to a senior advisor.
             </h1>
 
-            <p className="mt-4 max-w-xl text-sm leading-7 text-[#666666] sm:text-base">
+            <p className="mt-4 max-w-xl text-sm sm:text-base leading-7 text-[#666666]">
               No bots. No auto-replies. A real human responds—usually within two hours.
             </p>
 
@@ -144,12 +144,12 @@ export default function ContactPage() {
 </div>        </div>
 
 
-          <div className="rounded-[1.75rem] border border-[#e9e0d4] bg-white p-5 shadow-[0_18px_40px_rgba(0,0,0,0.04)] sm:p-6">
+          <div className="rounded-[1.75rem] border border-[#e9e0d4] bg-white p-5 sm:p-6 lg:p-8 shadow-[0_18px_40px_rgba(0,0,0,0.04)]">
             <div className="mb-5">
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#9b7b53]">
                 Contact form
               </p>
-              <h2 className="mt-2 text-2xl font-semibold sm:text-3xl">
+              <h2 className="mt-2 text-2xl lg:text-3xl font-semibold">
                 Send us a message
               </h2>
               <p className="mt-2 text-sm text-[#666666]">
@@ -158,7 +158,7 @@ export default function ContactPage() {
             </div>
 
             <form className="space-y-4" onSubmit={handleSubmit}>
-              <div className="grid gap-4 sm:grid-cols-2">
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <Field
                   label="Full name"
                   name="name"
@@ -194,7 +194,7 @@ export default function ContactPage() {
                   name="interest"
                   value={formData.interest}
                   onChange={handleChange}
-                  className="w-full rounded-2xl border border-[#ddd5c9] bg-[#fcfbf8] px-4 py-2.5 text-sm outline-none transition focus:border-[#9b7b53]"
+                  className="w-full rounded-2xl border border-[#ddd5c9] bg-[#fcfbf8] px-4 py-3 text-sm outline-none transition focus:border-[#9b7b53]"
                 >
                   <option>Buying</option>
                   <option>Selling</option>
@@ -220,7 +220,7 @@ export default function ContactPage() {
               <button
   type="submit"
   disabled={loading}
-  className="inline-flex w-full items-center justify-center rounded-full bg-[#155DFC] px-6 py-3 text-sm font-semibold text-white hover:bg-[#0F4EE8] transition-all duration-300 disabled:opacity-60"
+  className="inline-flex w-full items-center justify-center rounded-full bg-[#fdc500] px-6 py-3 text-sm font-semibold text-[#151515] transition-all duration-300 hover:bg-[#e6b200] disabled:opacity-60"
 >
   {loading ? "Sending..." : "Send Message"}
 </button>
@@ -230,7 +230,7 @@ export default function ContactPage() {
 
        <section className="mt-6 mb-16 flex justify-center">
           <div className="w-full max-w-4xl overflow-hidden rounded-[1.75rem] border border-[#e9e0d4] bg-white shadow-[0_18px_40px_rgba(0,0,0,0.04)]">
-            <div className="flex h-[260px] items-center justify-center bg-[linear-gradient(135deg,#ece2d3,#f8f4ed)] sm:h-[300px]">
+            <div className="flex h-[220px] sm:h-[280px] lg:h-[320px] items-center justify-center bg-[linear-gradient(135deg,#ece2d3,#f8f4ed)] sm:h-[300px]">
               <div className="rounded-2xl border border-dashed border-[#b89466] bg-white/50 px-6 py-4 text-sm font-medium text-[#8a6a42] backdrop-blur-sm">
                 Interactive map placeholder
               </div>
@@ -244,21 +244,21 @@ export default function ContactPage() {
 
 function InfoCard({ icon, title, value }) {
   return (
-    <div className="flex items-center gap-5 rounded-[28px] border border-[#e9e0d4] bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
-      <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#13274F] text-[#C6A15B]">
-        {icon}
-      </div>
+    <div className="flex items-start sm:items-center gap-4 rounded-3xl border border-[#e9e0d4] bg-white p-5 sm:p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+  <div className="flex h-14 w-14 sm:h-16 sm:w-16 shrink-0 items-center justify-center rounded-2xl bg-[#13274F] text-[#C6A15B]">
+    {icon}
+  </div>
 
-      <div>
-        <p className="text-xs uppercase tracking-[0.35em] font-semibold text-[#9b7b53]">
-          {title}
-        </p>
+  <div className="min-w-0">
+    <p className="text-[11px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.35em] font-semibold text-[#9b7b53]">
+      {title}
+    </p>
 
-        <div className="mt-2 text-lg font-medium leading-7 text-[#151515]">
-          {value}
-        </div>
-      </div>
+    <div className="mt-2 text-base sm:text-lg font-medium leading-6 break-words text-[#151515]">
+      {value}
     </div>
+  </div>
+</div>
   );
 }
 
@@ -282,7 +282,7 @@ function Field({
         value={value}
         onChange={onChange}
         placeholder={placeholder}
-        className="w-full rounded-2xl border border-[#ddd5c9] bg-[#fcfbf8] px-4 py-2.5 text-sm outline-none transition focus:border-[#9b7b53]"
+        className="w-full rounded-2xl border border-[#ddd5c9] bg-[#fcfbf8] px-4 py-3 text-sm outline-none transition focus:border-[#9b7b53]"
       />
     </div>
   );
