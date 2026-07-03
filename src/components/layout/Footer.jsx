@@ -66,7 +66,7 @@ const Footer = () => {
           <motion.div variants={item} className="space-y-5">
             <div>
               <h3 className="text-2xl font-bold tracking-wide">
-                Estate<span className="text-cyan-400">AURELIA</span>
+                AURELIA<span className="text-cyan-400">Estate</span>
               </h3>
               <p className="mt-3 max-w-sm text-sm leading-6 text-slate-300">
                 Premium real estate solutions for buying, selling, and renting properties with confidence.
