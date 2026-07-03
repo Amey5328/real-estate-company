@@ -8,40 +8,54 @@ import gallery7 from "../../assets/images/GalleryImages/gallery7.jpg";
 
 const galleryData = [
   {
-    id: 1,
-    image: gallery1,
-    alt: "Modern House"
-  },
-  {
-    id: 2,
-    image: gallery2,
-    alt: "Modern House"
-  },
-  {
-    id: 3,
-    image: gallery3,
-    alt: "Premium house"
-  },
-  {
-    id: 4,
-    image: gallery4,
-    alt: "Interior Design"
-  },
-  {
-    id: 5,
-    image: gallery5,
-    alt: "Premium house"
-  },
-  {
-    id: 6,
-    image: gallery6,
-    alt: "Luxury Home"
-  },
-  {
-    id: 7,
-    image: gallery7,
-    alt: "Luxury Home"
-  }
+  id: 1,
+  image: gallery1,
+  title: "Modern Villa",
+  category: "Residential",
+  location: "Mumbai"
+},
+{
+  id: 2,
+  image: gallery2,
+  title: "Corporate Tower",
+  category: "Commercial",
+  location: "Pune"
+},
+{
+  id: 3,
+  image: gallery3,
+  title: "Luxury Apartments",
+  category: "Apartments",
+  location: "Bangalore"
+},
+{
+  id: 4,
+  image: gallery4,
+  title: "Skyline Residency",
+  category: "Residential",
+  location: "Hyderabad"
+},
+{
+  id: 5,
+  image: gallery5,
+  title: "Business Hub",
+  category: "Commercial",
+  location: "Delhi"
+},
+{
+  id: 6,
+  image: gallery6,
+  title: "Green Valley Homes",
+  category: "Township",
+  location: "Nagpur"
+},
+{
+  id: 7,
+  image: gallery7,
+  title: "Corporate Tower",
+  category: "Commercial",
+  location: "Pune"
+}
 ];
 
 export default galleryData;
