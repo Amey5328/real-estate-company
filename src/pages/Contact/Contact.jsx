@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
-import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
+import {
+  FiPhone,
+  FiMail,
+  FiMapPin,
+  FiFacebook,
+  FiInstagram,
+  FiTwitter,
+  FiLinkedin,
+} from "react-icons/fi";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -69,8 +77,33 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen overflow-hidden bg-[#fbf8f3] text-[#151515]">
-      <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        <section className="grid gap-8 lg:grid-cols-2 lg:gap-10">
+      <main>
+        {/* Hero Banner */}
+
+<section className="relative mb-16 h-[450px] w-full overflow-hidden bg-gradient-to-r from-[#0A1F45] via-[#0C2758] to-[#0A2148]">
+  <div className="mx-auto flex h-full max-w-7xl items-center px-8 sm:px-12 lg:px-16">
+    <div className="max-w-4xl">
+
+      <p className="mb-6 text-sm font-semibold uppercase tracking-[0.35em] text-[#D4A32A]">
+        GET IN TOUCH
+      </p>
+
+      <h1 className="text-[58px] font-serif font-bold leading-[1.05] text-white sm:text-[70px] lg:text-[82px]">
+        Let's start a conversation.
+      </h1>
+
+      <p className="mt-8 max-w-3xl text-[22px] leading-10 text-gray-300">
+        Whether you're buying, selling, or simply exploring —
+        we'd love to hear from you.
+      </p>
+
+      
+
+    </div>
+  </div>
+</section>
+        <section className="mx-auto max-w-7xl grid gap-8 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:gap-10 lg:px-8">
+          
           <div className="flex flex-col justify-center">
             <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#9b7b53]">
               Reach us
@@ -109,6 +142,7 @@ export default function ContactPage() {
     }
   />
 </div>        </div>
+
 
           <div className="rounded-[1.75rem] border border-[#e9e0d4] bg-white p-5 shadow-[0_18px_40px_rgba(0,0,0,0.04)] sm:p-6">
             <div className="mb-5">
@@ -194,7 +228,7 @@ export default function ContactPage() {
           </div>
         </section>
 
-        <section className="mt-8 flex justify-center">
+       <section className="mt-6 mb-16 flex justify-center">
           <div className="w-full max-w-4xl overflow-hidden rounded-[1.75rem] border border-[#e9e0d4] bg-white shadow-[0_18px_40px_rgba(0,0,0,0.04)]">
             <div className="flex h-[260px] items-center justify-center bg-[linear-gradient(135deg,#ece2d3,#f8f4ed)] sm:h-[300px]">
               <div className="rounded-2xl border border-dashed border-[#b89466] bg-white/50 px-6 py-4 text-sm font-medium text-[#8a6a42] backdrop-blur-sm">
