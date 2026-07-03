@@ -33,7 +33,7 @@ const logoVariants = {
 const linkVariants = {
   hover: {
     y: -3,
-    color: "#2563eb",
+    color: "#FDC500",
     transition: {
       duration: 0.2,
     },
@@ -110,7 +110,7 @@ useEffect(() => {
   return (
     <>
       <header ref={navbarRef}
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500
+        className={`fixed top-0 left-0 z-50 w-full bg-[#00296B] py-4 shadow-lg transition-all duration-500
         ${
           isScrolled
             ? "bg-white/80 backdrop-blur-xl shadow-lg py-3"
@@ -160,8 +160,8 @@ useEffect(() => {
     className={({ isActive }) =>
       `relative text-[15px] font-medium transition-colors duration-300 ${
         isActive
-          ? "text-blue-600"
-          : "text-slate-700 hover:text-blue-600"
+      ? "text-[#FDC500]"
+      : "text-[#00296B] hover:text-[#FDC500]"
       }`
     }
   >
@@ -178,7 +178,7 @@ useEffect(() => {
             <NavLink
   ref={contactBtnRef}
   to="/contact"
-  className="flex items-center gap-2 rounded-full bg-blue-600 px-6 py-3 text-white font-semibold hover:bg-slate-900 transition-all duration-300"
+  className="flex items-center gap-2 rounded-full bg-[#FDC500] px-6 py-3 text-[#00296B] font-semibold transition-all duration-300 hover:bg-[#00296B] hover:text-[#FDC500]"
 >
               Book site visit
 
@@ -254,8 +254,8 @@ useEffect(() => {
                   `text-lg font-medium transition
                   ${
                     isActive
-                      ? "text-blue-600"
-                      : "text-slate-700"
+                      ? "text-[#FDC500]"
+                      : "text-[#00296B] hover:text-[#FDC500]"
                   }`
                 }
               >
@@ -273,11 +273,14 @@ useEffect(() => {
   <NavLink
     to="/contact"
     className="flex items-center gap-2 rounded-full
-    bg-blue-600 px-6 py-3
-    font-semibold
-    text-white
-    shadow-lg
-    hover:bg-slate-900"
+bg-[#FDC500]
+px-6 py-3
+font-semibold
+text-[#00296B]
+shadow-lg
+transition-all duration-300
+hover:bg-[#00296B]
+hover:text-[#FDC500]"
   >
     Contact Us
 
