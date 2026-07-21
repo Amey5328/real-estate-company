@@ -164,21 +164,15 @@ export default function RealEstateBlog() {
           </a>
         </div>
 
-        <div
-          className="ticker"
-          role="list"
-          aria-label="Categories"
-        >
-          {CATEGORIES.concat(CATEGORIES).map((cat, i) => (
-            <span
-              className="ticker__item"
-              role="listitem"
-              key={`${cat}-${i}`}
-            >
-              {cat}
-            </span>
-          ))}
-        </div>
+        <div className="ticker">
+  <div className="ticker__track">
+    {CATEGORIES.concat(CATEGORIES).map((cat, i) => (
+      <span className="ticker__item" key={`${cat}-${i}`}>
+        {cat}
+      </span>
+    ))}
+  </div>
+</div>
       </header>
 
       <main id="listings" className="listings">
@@ -203,40 +197,7 @@ export default function RealEstateBlog() {
         </div>
       </main>
 
-      <footer className="footer">
-        <div className="footer__inner">
-          <div>
-            <p className="footer__title">
-              Get new listings in your inbox
-            </p>
-
-            <p className="footer__subtitle">
-              One email, twice a month. No spam, no pop-ups,
-              no fine print.
-            </p>
-          </div>
-
-          <form
-            className="footer__form"
-            onSubmit={(e) => e.preventDefault()}
-          >
-            <input
-              type="email"
-              placeholder="you@example.com"
-              aria-label="Email address"
-              required
-            />
-
-            <button type="submit">
-              Subscribe
-            </button>
-          </form>
-        </div>
-
-        <p className="footer__legal">
-          © 2026 Field Notes. All rights reserved.
-        </p>
-      </footer>
+      
     </div>
   );
 }

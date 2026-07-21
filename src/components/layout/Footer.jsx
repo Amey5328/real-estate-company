@@ -50,10 +50,10 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative overflow-hidden bg-slate-950 text-white">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(14,165,233,0.16),transparent_32%),radial-gradient(circle_at_bottom_left,rgba(16,185,129,0.12),transparent_30%)]" />
-      <div className="pointer-events-none absolute -right-24 top-10 h-64 w-64 rounded-full bg-cyan-400/10 blur-3xl" />
-      <div className="pointer-events-none absolute -left-24 bottom-0 h-64 w-64 rounded-full bg-emerald-400/10 blur-3xl" />
+    <footer className="relative overflow-hidden bg-[#00296B] text-white">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(253,197,0,0.18),transparent_32%),radial-gradient(circle_at_bottom_left,rgba(253,197,0,0.12),transparent_30%)]" />
+      <div className="pointer-events-none absolute -right-24 top-10 h-64 w-64 rounded-full bg-[#FDC500]/10 blur-3xl" />
+      <div className="pointer-events-none absolute -left-24 bottom-0 h-64 w-64 rounded-full bg-[#FDC500]/10 blur-3xl" />
 
       <motion.div
         variants={container}
@@ -75,22 +75,22 @@ const Footer = () => {
 
             <div className="space-y-3 text-sm text-slate-300">
               <div className="flex items-start gap-3">
-                <FaLocationDot className="mt-1 text-cyan-400" />
+                <FaLocationDot className="mt-1 text-[#FDC500]" />
                 <span>Pune, Maharashtra, India</span>
               </div>
               <div className="flex items-center gap-3">
-                <FaPhone className="text-cyan-400" />
+                <FaPhone className="text-[#FDC500]" />
                 <span>+91 98765 43210</span>
               </div>
               <div className="flex items-center gap-3">
-                <FaEnvelope className="text-cyan-400" />
+                <FaEnvelope className="text-[#FDC500]" />
                 <span>support@aurelia.com</span>
               </div>
             </div>
           </motion.div>
 
           <motion.div variants={item}>
-            <h4 className="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">
+            <h4 className="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#FDC500]">
               Quick Links
             </h4>
             <ul className="space-y-3">
@@ -100,13 +100,15 @@ const Footer = () => {
                     to={link.path}
                     className={({ isActive }) =>
                       `group relative inline-block text-sm transition-colors duration-300 ${
-                        isActive ? "text-white" : "text-slate-300 hover:text-white"
+                        isActive
+      ? "text-[#FDC500]"
+      : "text-slate-300 hover:text-[#FDC500]"
                       }`
                     }
                   >
                     <span className="relative">
                       {link.name}
-                      <span className="absolute -bottom-1 left-0 h-px w-0 bg-cyan-400 transition-all duration-300 group-hover:w-full" />
+                      <span className="absolute -bottom-1 left-0 h-px w-0 bg-[#FDC500] transition-all duration-300 group-hover:w-full" />
                     </span>
                   </NavLink>
                 </li>
@@ -115,20 +117,20 @@ const Footer = () => {
           </motion.div>
 
           <motion.div variants={item}>
-            <h4 className="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">
+            <h4 className="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#FDC500]">
               Services
             </h4>
             <ul className="space-y-3 text-sm text-slate-300">
-              <li className="transition-colors duration-300 hover:text-white">Property Buying</li>
-              <li className="transition-colors duration-300 hover:text-white">Property Selling</li>
-              <li className="transition-colors duration-300 hover:text-white">Rental Assistance</li>
-              <li className="transition-colors duration-300 hover:text-white">Investment Advisory</li>
-              <li className="transition-colors duration-300 hover:text-white">Property Valuation</li>
+              <li className="transition-colors duration-300 hover:text-[#FDC500]">Property Buying</li>
+              <li className="transition-colors duration-300 hover:text-[#FDC500]">Property Selling</li>
+              <li className="transition-colors duration-300 hover:text-[#FDC500]">Rental Assistance</li>
+              <li className="transition-colors duration-300 hover:text-[#FDC500]">Investment Advisory</li>
+              <li className="transition-colors duration-300 hover:text-[#FDC500]">Property Valuation</li>
             </ul>
           </motion.div>
 
           <motion.div variants={item}>
-            <h4 className="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">
+            <h4 className="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#FDC500]">
               Connect
             </h4>
             <p className="mb-5 text-sm leading-6 text-slate-300">
@@ -143,7 +145,7 @@ const Footer = () => {
                   whileHover={{ y: -4, scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   transition={{ type: "spring", stiffness: 300, damping: 18 }}
-                  className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-300 transition-colors duration-300 hover:border-cyan-400 hover:bg-cyan-400 hover:text-slate-950"
+                 className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-300 transition-colors duration-300 hover:border-[#FDC500] hover:bg-[#FDC500] hover:text-[#00296B]"
                 >
                   <Icon className="text-base" />
                 </motion.a>
@@ -159,13 +161,13 @@ const Footer = () => {
           <div className="flex flex-col gap-4 text-sm text-slate-400 md:flex-row md:items-center md:justify-between">
             <p>© 2026 AURELIA. All rights reserved.</p>
             <div className="flex flex-wrap gap-4">
-              <a href="#" className="transition-colors duration-300 hover:text-white">
+              <a href="#" className="transition-colors duration-300 hover:text-[#FDC500]">
                 Privacy Policy
               </a>
-              <a href="#" className="transition-colors duration-300 hover:text-white">
+              <a href="#" className="transition-colors duration-300 hover:text-[#FDC500]">
                 Terms of Service
               </a>
-              <a href="#" className="transition-colors duration-300 hover:text-white">
+              <a href="#" className="transition-colors duration-300 hover:text-[#FDC500]">
                 Sitemap
               </a>
             </div>
