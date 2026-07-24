@@ -86,8 +86,8 @@ function About() {
     
   <div className="w-full bg-white font-sans">
 
-    <div className="about-about px-[8%] py-20"></div>
-    <div className="about-about w-full px-[8%] py-20 bg-white font-sans">
+    
+    <div className="w-full px-[8%] pt-8 pb-20 bg-white font-sans">
       {/* Hero Section */}
       <section className="about-hero flex flex-col lg:flex-row items-center justify-between gap-[70px] animate-[fadeUp_.8s_ease]">
         <div className="about-hero-left flex-1 relative">
