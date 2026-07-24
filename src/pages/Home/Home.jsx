@@ -1,5 +1,6 @@
 import React from "react";
-
+import "./Home.css";
+// import swiper for hero section
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -7,36 +8,33 @@ import "swiper/css/pagination";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 // Import Icons
-import {
-  FaShieldAlt,
-  FaBalanceScale,
-  FaUsers,
-  FaBed,
-  FaBath,
-} from "react-icons/fa";
-import { MdLocationOn, MdOutlineSquareFoot } from "react-icons/md";
-import {
-  LuHouse,
-  LuKeyRound,
-  LuBriefcaseBusiness,
-  LuTrendingUp,
-} from "react-icons/lu";
+import { FaShieldAlt } from "react-icons/fa";
+import { MdLocationOn } from "react-icons/md";
+import { FaBalanceScale } from "react-icons/fa";
+import { FaUsers } from "react-icons/fa";
+import { LuHouse } from "react-icons/lu";
+import { LuKeyRound } from "react-icons/lu";
+import { LuBriefcaseBusiness } from "react-icons/lu";
+import { LuTrendingUp } from "react-icons/lu";
+import { FaBed } from "react-icons/fa";
+import { FaBath } from "react-icons/fa";
+import { MdOutlineSquareFoot } from "react-icons/md";
 
-// Import Images
-import ctaimg from "../../assets/images/HomeImages/ctaimg.jpg";
-import exterior from "../../assets/images/HomeImages/real_exteriorimg.jpg";
-import interior from "../../assets/images/HomeImages/real_interiorimg.jpg";
-import seaside from "../../assets/images/HomeImages/real_seasideimg.jpg";
-import client1 from "../../assets/images/HomeImages/client1.jpg";
-import client2 from "../../assets/images/HomeImages/client2.jpg";
-import client3 from "../../assets/images/HomeImages/client3.jpg";
-import hero1 from "../../assets/images/HomeImages/hero1.jpg";
-import hero2 from "../../assets/images/HomeImages/hero2.jpg";
-import hero3 from "../../assets/images/HomeImages/hero3.jpg";
-import hero4 from "../../assets/images/HomeImages/hero4.jpg";
-import hero5 from "../../assets/images/HomeImages/herogymimg.jpg";
+
+import exterior from "../../assets/images/logo/HomeImages/exterior.jpg";
+import interior from "../../assets/images/logo/HomeImages/interior.jpg";
+import seaside from "../../assets/images/logo/HomeImages/seaside.jpg";
+import client1 from "../../assets/images/logo/HomeImages/client1.jpg";
+import client2 from "../../assets/images/logo/HomeImages/client2.jpg";
+import client3 from "../../assets/images/logo/HomeImages/client3.jpg";
+import hero1 from "../../assets/images/logo/HomeImages/hero1.jpg";
+import hero2 from "../../assets/images/logo/HomeImages/hero2.jpg";
+import hero3 from "../../assets/images/logo/HomeImages/hero3.jpg";
+import hero4 from "../../assets/images/logo/HomeImages/hero4.jpg";
+import hero5 from "../../assets/images/logo/HomeImages/hero5.jpg";
 
 function Home() {
+  // Properties array
   const properties = [
     {
       img: exterior,
@@ -69,193 +67,190 @@ function Home() {
       area: "1800 sq.ft",
     },
   ];
-
+  // Features array
   const features = [
-    { title: "Trusted Deals", icon: <FaShieldAlt /> },
-    { title: "Prime Locations", icon: <MdLocationOn /> },
-    { title: "Legal Assistance", icon: <FaBalanceScale /> },
-    { title: "Experienced Team", icon: <FaUsers /> },
+    {
+      title: "Trusted Deals",
+      icon: <FaShieldAlt />,
+    },
+    {
+      title: "Prime Locations",
+      icon: <MdLocationOn />,
+    },
+    {
+      title: "Legal Assistance",
+      icon: <FaBalanceScale />,
+    },
+    {
+      title: "Experienced Team",
+      icon: <FaUsers />,
+    },
   ];
 
+  // Services array
   const services = [
-    { title: "Property Buying", icon: <LuHouse /> },
-    { title: "Property Selling", icon: <LuKeyRound /> },
-    { title: "Rental Assistance", icon: <LuBriefcaseBusiness /> },
-    { title: "Investment Consultation", icon: <LuTrendingUp /> },
+    {
+      title: "Property Buying",
+      icon: <LuHouse />,
+    },
+    {
+      title: "Property Selling",
+      icon: <LuKeyRound />,
+    },
+    {
+      title: "Rental Assistance",
+      icon: <LuBriefcaseBusiness />,
+    },
+    {
+      title: "Investment Consultation",
+      icon: <LuTrendingUp />,
+    },
   ];
 
+  // Reviews Array
   const reviews = [
     {
       image: client1,
+
       review: "Excellent service and smooth buying experience.",
       name: "Sarah Johnson",
     },
     {
       image: client2,
+
       review: "Professional team and transparent process.",
       name: "Emily Brown",
     },
     {
       image: client3,
+
       review: "Highly recommend Aurelia for luxury properties.",
       name: "David Miller",
     },
   ];
 
   return (
-    <div className="home m-0 p-0 font-[Poppins,sans-serif]">
-      {/* HERO SECTION */}
-      <section className="relative flex h-[80vh] w-full items-center justify-center overflow-hidden text-center text-white">
+    
+    <div className="home">
+      {/* Hero section */}
+
+      <section className="hero">
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           navigation
           pagination={{ clickable: true }}
           autoplay={{ delay: 3000 }}
           loop={true}
-          className="h-full w-full"
         >
-          {[hero1, hero2, hero3, hero4, hero5].map((image, index) => (
-            <SwiperSlide key={index}>
-              <img
-                src={image}
-                className="block h-[100vh] w-full object-cover"
-                alt={`Hero ${index + 1}`}
-              />
-            </SwiperSlide>
-          ))}
+          <SwiperSlide>
+            <img src={hero1} className="hero-img" />
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <img src={hero2} className="hero-img" />
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <img src={hero3} className="hero-img" />
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <img src={hero4} className="hero-img" />
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <img src={hero5} className="hero-img" />
+          </SwiperSlide>
         </Swiper>
 
-        {/* HERO OVERLAY */}
-        <div className="absolute left-0 z-10 flex h-[84vh] w-full items-center justify-center bg-black/35 text-center">
-          <div className="w-[95%] max-w-[1400px] mx-auto">
-            <p className="text-[18px] font-bold text-[#d4a33a]">LET'S BEGIN</p>
+        {/* Content Shown in Hero section */}
+        <div className="hero-overlay">
+          <div className="container">
+            <p>LET'S BEGIN</p>
 
-            <h1 className="my-5 text-[64px] font-bold leading-[1.2] max-[1200px]:text-[56px] max-[992px]:text-[46px] max-[768px]:text-[36px] max-[480px]:text-[30px]">
+            <h1>
               Ready to find your
               <br />
-              <span className="text-[#d4a33a]">dream property?</span>
+              <span> dream property?</span>
             </h1>
 
-            <h5 className="mx-auto max-w-[700px] text-[18px] font-normal leading-[1.8] text-[#ececec] max-[992px]:text-[17px] max-[768px]:text-[16px] max-[480px]:text-[15px]">
+            <h5>
               Book a no-obligation site visit or speak with a senior advisor
               today.
             </h5>
 
-            <div className="mt-[35px] flex justify-center gap-[15px] max-[768px]:flex-col max-[768px]:items-center">
-              <button className="cursor-pointer rounded-[40px] bg-gradient-to-br from-[#d4a33a] to-[#f4c542] px-[34px] py-[15px] text-[16px] font-semibold text-white transition duration-300 hover:-translate-y-[5px] hover:shadow-[0_12px_25px_rgba(212,163,58,0.45)] max-[768px]:w-[220px] max-[480px]:w-full">
-                View Properties →
-              </button>
-
-              <button className="cursor-pointer rounded-[40px] border-2 border-white bg-transparent px-[34px] py-[15px] text-[16px] font-semibold text-white transition duration-300 hover:-translate-y-[5px] hover:bg-white hover:text-[#102040] hover:shadow-[0_12px_25px_rgba(212,163,58,0.45)] max-[768px]:w-[220px] max-[480px]:w-full">
-                Contact Us
-              </button>
+            <div>
+              <button>Book Site Visit</button>
+              <button className="outline">Contact Us</button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* PROPERTIES SECTION */}
-      <section className="relative bg-white px-0 py-[90px] max-[992px]:py-[70px] max-[768px]:py-[60px]">
-        <div className="mx-auto w-[95%] max-w-[1400px] max-[1200px]:w-[92%] max-[768px]:w-[94%]">
-          <p className="mb-[15px] text-[14px] font-semibold uppercase tracking-[3px] text-[#c8a046]">
-            FEATURED LISTINGS
-          </p>
-
-          <h2 className="mb-5 text-[46px] leading-[1.25] text-[#102040] max-[1200px]:text-[40px] max-[992px]:text-[36px] max-[768px]:text-[30px] max-[480px]:text-[26px]">
+      {/* Properties Section */}
+      <section className="properties">
+        <div className="container">
+          <p className="small">FEATURED LISTINGS</p>
+          <h2>
             Handpicked properties for
             <br />
             discerning buyers
           </h2>
 
-          <div className="mt-[45px] flex flex-wrap gap-[30px] max-[768px]:flex-col">
+          <div className="card-container">
             {properties.map((item, index) => (
-              <div
-                className="group min-w-[300px] flex-1 overflow-hidden rounded-[18px] border-b-[5px] border-[#d4a33a] bg-white shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition duration-300 hover:-translate-y-[12px] hover:shadow-[0_18px_40px_rgba(0,0,0,0.15)] max-[992px]:min-w-[280px] max-[768px]:w-full"
-                key={index}
-              >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={item.img}
-                    alt={item.title}
-                    className="block h-[240px] w-full object-cover transition duration-500 group-hover:scale-110 max-[1200px]:h-[220px] max-[768px]:h-[220px] max-[480px]:h-[200px]"
-                  />
+              <div className="property-card" key={index}>
+                <div className="image-box">
+                  <img src={item.img} alt={item.title} />
 
-                  <span className="absolute left-3 top-3 rounded-[20px] bg-orange-500 px-3 py-[5px] text-[13px] font-bold tracking-[0.5px] text-white">
-                    {item.status}
+                  <span className="badge">{item.status}</span>
+                </div>
+
+                <h3>{item.title}</h3>
+                <div className="property-details">
+                  <span>
+                    <FaBed /> {item.beds} Beds
+                  </span>
+
+                  <span>
+                    <FaBath /> {item.baths} Baths
+                  </span>
+
+                  <span>
+                    <MdOutlineSquareFoot /> {item.area}
                   </span>
                 </div>
 
-                <h3 className="mx-5 mb-[10px] mt-5 text-[larger] font-bold text-[#102040]">
-                  {item.title}
-                </h3>
-
-                <div className="mx-5 my-[15px] flex items-center justify-between text-[15px] text-[#666]">
-                  <span className="flex items-center gap-[6px]">
-                    <FaBed className="text-[16px] text-[#d4a33a]" />
-                    {item.beds} Beds
-                  </span>
-
-                  <span className="flex items-center gap-[6px]">
-                    <FaBath className="text-[16px] text-[#d4a33a]" />
-                    {item.baths} Baths
-                  </span>
-
-                  <span className="flex items-center gap-[6px]">
-                    <MdOutlineSquareFoot className="text-[16px] text-[#d4a33a]" />
-                    {item.area}
-                  </span>
-                </div>
-
-                <div className="mx-[13px] flex items-center gap-2 text-[#666]">
-                  <MdLocationOn className="text-[16px] text-[#777]" />
-                  {item.location}
-                </div>
-
-                <h4 className="mx-5 my-[10px] text-[25px] font-medium tracking-[0.2px] text-[#102040]">
-                  {item.price}
-                </h4>
-
-                <p className="m-5 inline-flex cursor-pointer items-center gap-[6px] text-[16px] font-semibold text-[#d4a33a] transition duration-300 hover:translate-x-[5px] hover:text-[#102040]">
-                  View Details →
+                <p>
+                  <MdLocationOn /> {item.location}
                 </p>
+
+                <h4 className="property-price">{item.price}</h4>
+
+                <p className="view-details">View Details →</p>
               </div>
             ))}
           </div>
-
-          <div className="mt-10 flex justify-end">
-            <span className="cursor-default text-[16px] font-semibold text-[#102040] transition duration-300 hover:text-[#d4a33a]">
-              View All Properties →
-            </span>
+          <div className="view-all-container">
+            <span className="view-all">View All Properties →</span>
           </div>
         </div>
       </section>
 
-      {/* WHY AURELIA */}
-      <section className="relative bg-[#f8f9fc] py-[90px] text-center max-[992px]:py-[70px] max-[768px]:py-[60px]">
-        <div className="mx-auto w-[95%] max-w-[1400px]">
-          <p className="mb-[15px] text-[14px] font-semibold uppercase tracking-[3px] text-[#c8a046]">
-            WHY AURELIA
-          </p>
+      {/* Why section */}
+      <section className="why">
+        <div className="container">
+          <p className="small">WHY AURELIA</p>
 
-          <h2 className="mb-5 text-[46px] leading-[1.25] text-[#102040] max-[1200px]:text-[40px] max-[992px]:text-[36px] max-[768px]:text-[30px] max-[480px]:text-[26px]">
-            A standard you can feel
-          </h2>
+          <h2>A standard you can feel</h2>
 
-          <div className="mt-[50px] flex flex-wrap items-stretch justify-center gap-[30px] max-[768px]:flex-col">
+          <div className="feature-box">
             {features.map((item, index) => (
-              <div
-                key={index}
-                className="group min-w-[250px] flex-1 rounded-[18px] bg-white px-[30px] py-10 text-center shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition duration-300 hover:-translate-y-[12px] max-[992px]:basis-[calc(50%-20px)] max-[768px]:w-full max-[768px]:min-w-full"
-              >
-                <div className="mx-auto mb-[25px] flex h-[70px] w-[70px] items-center justify-center rounded-full bg-[#102040] text-[30px] text-[#d4a33a] transition duration-500 group-hover:rotate-[360deg] max-[480px]:h-[60px] max-[480px]:w-[60px] max-[480px]:text-[26px]">
-                  {item.icon}
-                </div>
+              <div className="box" key={index}>
+                <div className="icon">{item.icon}</div>
+                <h3>{item.title}</h3>
 
-                <h3 className="mb-[15px] text-[22px] text-[#102040]">
-                  {item.title}
-                </h3>
-
-                <p className="text-[15px] leading-[1.8] text-[#666]">
+                <p>
                   Every transaction is verified with integrity and transparency.
                 </p>
               </div>
@@ -264,85 +259,54 @@ function Home() {
         </div>
       </section>
 
-      {/* SERVICES */}
-      <section className="relative bg-white py-[90px] text-center max-[992px]:py-[70px] max-[768px]:py-[60px]">
-        <div className="mx-auto w-[95%] max-w-[1400px]">
-          <p className="mb-[15px] text-[14px] font-semibold uppercase tracking-[3px] text-[#c8a046]">
-            OUR SERVICES
-          </p>
+      {/* Services */}
+      <section className="services">
+        <div className="container">
+          <p className="small">OUR SERVICES</p>
 
-          <h2 className="mb-5 text-[46px] leading-[1.25] text-[#102040] max-[1200px]:text-[40px] max-[992px]:text-[36px] max-[768px]:text-[30px] max-[480px]:text-[26px]">
-            Everything, end-to-end
-          </h2>
+          <h2>Everything, end-to-end</h2>
 
-          <div className="mt-[50px] flex flex-wrap items-stretch justify-center gap-[30px] max-[768px]:flex-col">
+          <div className="service-container">
             {services.map((item, index) => (
-              <div
-                key={index}
-                className="group min-w-[250px] flex-1 rounded-[18px] bg-white px-[25px] py-[35px] text-center shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition duration-300 hover:-translate-y-[12px] hover:bg-[#102040] max-[992px]:basis-[calc(50%-20px)] max-[768px]:w-full max-[768px]:min-w-full"
-              >
-                <div className="mx-auto mb-[25px] flex h-[70px] w-[70px] items-center justify-center rounded-full bg-[#f5f5f5] text-[32px] text-[#d4a33a] transition duration-300 group-hover:bg-white max-[480px]:h-[60px] max-[480px]:w-[60px] max-[480px]:text-[26px]">
-                  {item.icon}
-                </div>
+              <div className="service-box" key={index}>
+                <div className="service-icon">{item.icon}</div>
+                <h3>{item.title}</h3>
 
-                <h3 className="mb-[15px] text-[22px] text-[#102040] group-hover:text-white">
-                  {item.title}
-                </h3>
-
-                <p className="text-[15px] leading-[1.8] text-[#666] group-hover:text-white">
-                  Professional assistance for your property journey.
-                </p>
+                <p>Professional assistance for your property journey.</p>
               </div>
             ))}
           </div>
-
-          <div className="mt-[30px] flex justify-end gap-2 text-[16px] font-semibold text-[#102040] transition duration-300 hover:translate-x-1 hover:text-[#d4a33a]">
+          <div className="more-services">
             <span>More Services</span>
-            <span className="text-[18px]">→</span>
+            <span className="arrow">→</span>
           </div>
         </div>
       </section>
 
-      {/* REVIEWS */}
-      <section className="relative bg-[#f8f9fc] py-[90px] text-center max-[992px]:py-[70px] max-[768px]:py-[60px]">
-        <div className="mx-auto w-[95%] max-w-[1400px]">
-          <p className="mb-[15px] text-[14px] font-semibold uppercase tracking-[3px] text-[#c8a046]">
-            CLIENT STORIES
-          </p>
+      {/* Testimonials */}
+      <section className="reviews">
+        <div className="container">
+          <p className="small">CLIENT STORIES</p>
 
-          <h2 className="mb-5 text-[46px] leading-[1.25] text-[#102040] max-[1200px]:text-[40px] max-[992px]:text-[36px] max-[768px]:text-[30px] max-[480px]:text-[26px]">
-            Quietly trusted by hundreds
-          </h2>
+          <h2>Quietly trusted by hundreds</h2>
 
-          <div className="mt-[50px] flex flex-wrap items-stretch justify-center gap-[30px] max-[768px]:flex-col">
+          <div className="review-container">
             {reviews.map((item, index) => (
-              <div
-                key={index}
-                className="min-w-[320px] flex-1 rounded-[18px] border-t-[5px] border-[#d4a33a] bg-white p-[35px] text-left shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition duration-300 hover:-translate-y-[12px] max-[992px]:basis-[calc(50%-20px)] max-[768px]:w-full max-[768px]:min-w-full max-[768px]:p-[30px] max-[480px]:p-[25px]"
-              >
-                <h3 className="text-[22px] tracking-[3px] text-[#d4a33a]">
-                  ★★★★★
-                </h3>
+              <div className="review-card" key={index}>
+                <h3>★★★★★</h3>
 
-                <p className="my-[25px] text-[16px] leading-[1.9] text-[#555]">
-                  "{item.review}"
-                </p>
+                <p className="review-text">"{item.review}"</p>
 
-                <div className="mt-[25px] flex items-center gap-[15px] max-[480px]:gap-[10px]">
+                <div className="client-info">
                   <img
                     src={item.image}
                     alt={item.name}
-                    className="h-[65px] w-[65px] rounded-full object-cover max-[480px]:h-[55px] max-[480px]:w-[55px]"
+                    className="client-img"
                   />
 
                   <div>
-                    <h4 className="mb-[5px] text-[18px] text-[#102040] max-[480px]:text-[16px]">
-                      {item.name}
-                    </h4>
-
-                    <span className="text-[14px] text-[#888] max-[480px]:text-[13px]">
-                      Verified Client
-                    </span>
+                    <h4>{item.name}</h4>
+                    <span>Verified Client</span>
                   </div>
                 </div>
               </div>
@@ -351,27 +315,18 @@ function Home() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section
-        className="relative bg-cover bg-center bg-no-repeat px-5 py-[100px] text-center text-white"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)), url(${ctaimg})`,
-        }}
-      >
-        <div className="mx-auto w-[95%] max-w-[1400px]">
-          <h2 className="mb-5 text-[48px] leading-[1.3] text-white max-[768px]:text-[34px]">
+      {/* cta */}
+      <section className="cta">
+        <div className="container">
+          <h2>
             Ready to find your
             <br />
-            <span className="text-[#d4a33a]">dream property?</span>
+            <span> dream property?</span>
           </h2>
 
-          <button className="m-[10px] rounded-[40px] bg-gradient-to-br from-[#d4a33a] to-[#f4c542] px-[34px] py-[15px] font-semibold text-white transition duration-300 hover:-translate-y-[5px] hover:shadow-[0_12px_25px_rgba(212,163,58,0.45)] max-[768px]:w-[220px] max-[480px]:w-full">
-            Book Site Visit
-          </button>
+          <button>Book Site Visit</button>
 
-          <button className="m-[10px] rounded-[40px] border-2 border-white bg-transparent px-[34px] py-[15px] font-semibold text-white transition duration-300 hover:-translate-y-[5px] hover:bg-white hover:text-[#102040] max-[768px]:w-[220px] max-[480px]:w-full">
-            Contact Us
-          </button>
+          <button className="outline">Contact Us</button>
         </div>
       </section>
     </div>
@@ -379,3 +334,7 @@ function Home() {
 }
 
 export default Home;
+
+
+
+

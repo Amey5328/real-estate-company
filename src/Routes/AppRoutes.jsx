@@ -6,6 +6,7 @@ import Home from "../pages/Home/Home";
 import About from "../pages/About/About";
 import Properties from "../pages/Properties/Properties";
 import Services from "../pages/Services/Services";
+import ServiceDetails from "../pages/Services/ServiceDetails";
 import Gallery from "../pages/Gallery/Gallery";
 
 
@@ -21,11 +22,16 @@ const AppRoutes = () => {
         <Route index element={<Home />} />
 
         <Route path="about" element={<About />} />
-        <Route path="properties" element={<Properties/>}/>
+        <Route path="properties" element={<Properties />} />
 
-       
+
 
         <Route path="services" element={<Services />} />
+
+        <Route
+          path="services/:serviceId"
+          element={<ServiceDetails />}
+        />
 
         <Route path="gallery" element={<Gallery />} />
 
